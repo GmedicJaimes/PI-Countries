@@ -1,0 +1,32 @@
+.containerPrincipal{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  padding-top: 2px;
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+}
+
+.filter{
+  background-color: transparent;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 2px;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+  outline-style: none;
+}
+
+.filter option{
+  background-color: #8d0801;
+  border: none;
+  outline: none;
+}

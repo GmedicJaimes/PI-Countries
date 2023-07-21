@@ -42,21 +42,17 @@ const idByHandler = async (req, res) => {
     //? metodo para buscar por medio del id el pais que deseamos
     const findId = await Country.findByPk(idPais, 
       { 
-        // where: {
-        //   id: {
-        //     //*comparacion de texto insensible a mayusculas y minusculas.
-        //     [Op.iLike]: `%${idPais}%`
-        //   }
-        // },
+        
         //* de esta manera podemos incluir la informacion de las actividades en un pais
         include: [
           {
             model: Activity,
-            through: { attributes: []}
+            through: { attributes: []},
             // attributes: ['name', 'dificulty', 'duration', 'season'],
+             
           }
         ],
-        attributes: { exclude: ["Country_Activity"]}  
+        
       })
       if(!findId) throw new Error('Id not exists')//* control de error por si el ID es incorrecto
 

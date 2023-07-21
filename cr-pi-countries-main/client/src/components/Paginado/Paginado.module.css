@@ -1,0 +1,46 @@
+.container{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding-top: 9px;
+
+}
+.ul{
+  background-color: transparent;
+}
+
+.li{
+  
+  color: white;
+  
+  float: left;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  padding-left: 7px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.li a{
+  width: 20px;
+  height: 20px;
+  background-color: #960800;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 5px;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.li a:hover {
+  background-color: #750907;
+}

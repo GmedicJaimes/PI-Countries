@@ -1,0 +1,93 @@
+.containerPrincipal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  width: 244px;
+  height: 330px;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: .3em;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  background-color: #ffffffa6;
+  border-radius: 10px;
+  transition: all 0.25s;
+}
+
+.containerPrincipal:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 50%;
+  background-color: transparent;
+  
+}
+
+.image img{
+  width: 100%;
+  height: 165px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  overflow: hidden;
+  
+}
+
+.containerInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  line-height: .8;
+
+  padding-top: 20px;
+  
+  width: 100%;
+  height: 50%;
+  background-color: transparent;
+}
+
+.containerInfo h2{
+  color: #000;
+  font-weight: 500;
+  background-color: transparent;
+  
+}
+
+.containerInfo p{
+  color: #000;
+  font-weight: 400;
+  background-color: transparent;
+  font-size: 1.2em;
+
+  padding-top: 10px;
+}
+
+.link{
+  background-color: transparent;
+  padding: 10px;
+}
+
+.buttonCard{
+  color: white;
+  background-color: #bf0603;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+
+}
+
+.buttonCard:hover{
+  background-color: #750907;
+}

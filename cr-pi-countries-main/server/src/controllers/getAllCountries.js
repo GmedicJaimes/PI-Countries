@@ -9,10 +9,10 @@ const getAllCountries = async () => {
     const infoCountries = data.map(info => ({
       id: info.cca3,
       name: info.name.common,
-      image: info.flags.svg,
+      image: info.flags.png,
       continent: info.continents[0],
       capital: info.capital ? info.capital[0] : "Not Found",
-      subregion: info.subregion ? info.subregion[0] : "Not Found",
+      subregion: info.subregion ? info.subregion : "Not Found",
       area: info.area,
       population: info.population
     }))

@@ -29,10 +29,20 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     area: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
+      //* getter usado para convertir un numero pegado, separado por puntos. Ej: number: 12450500 ===> 12.450.500
+      // get() {
+      //   const value = this.getDataValue('area');
+      //   return value ? value.toLocaleString('es-ES') : null;
+      // },
     },
     population: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
+      //* getter usado para convertir un numero pegado, separado por puntos. Ej: number: 12450500 ===> 12.450.500
+      // get() {
+      //   const value = this.getDataValue('population');
+      //   return value.toLocaleString('es-ES');
+      // },
       allowNull: false
     }
   }, { timestamps: false});

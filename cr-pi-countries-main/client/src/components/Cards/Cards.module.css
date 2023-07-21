@@ -1,0 +1,25 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 800px;  
+  background-image: url('../../assets/pais2.jpg');
+  background-size: cover;
+}
+
+.list{
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  color: black;
+}
+
+.cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  height: 800px;
+}
