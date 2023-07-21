@@ -1,6 +1,6 @@
 import { GET_COUNTRIES, GET_BY_NAME, GET_BY_ID, POST_ACTIVITIES, GET_ACTIVITIES, CONTINENT, ORDER, POPULATION, ACTIVITIES} from './actions'
 
-let initialState = { allCountries: [], copyCountries: [], detail: [], allActivities: [] }
+let initialState = { allCountries: [], copyCountries: [], detail: [], allActivities: [] , activityFilter: []}
 
 const reducer = (state = initialState, action) => {
 
@@ -25,7 +25,7 @@ const reducer = (state = initialState, action) => {
 
     //? action para traer todas las actividades
     case GET_ACTIVITIES:
-      console.log(action.payload)
+      console.log(state.allActivities)
       return { ...state, allActivities: action.payload}
 
     //? actions para filtros
@@ -75,21 +75,15 @@ const reducer = (state = initialState, action) => {
       return { ...state, copyCountries: action.payload === 'Population' ? population : [...maxMin]}
     
     case ACTIVITIES: 
-      let paises = state.allCountries
-      console.log(paises)
+      const activityName = action.payload; // El nombre de la actividad a filtrar
+      console.log(activityName);
+      const filteredCountries = state.allActivities
+        .filter((activity) => activity.name === activityName)
+        .flatMap((activity) => activity.Countries);
 
-      let countries = [];
-
-      for (let i = 0; i < paises.length; i++) {
-        // console.log(paises[i].name);
-        if (paises[i].Activities?.find((actividad => actividad.name === action.payload))){
-            countries.push(paises[i])
-        } 
-    }
-      // const activityFilter = action.payload === 'All' ? activity.filter(e => e.activities.length > 0) : activity.filter(c => c.activities.find((element) => element.name.toLowerCase() === action.payload))
-
-      console.log(countries)
-      return {...state, allCountries: [...countries]}
+      console.log(filteredCountries)
+      return { ...state, copyCountries: filteredCountries };
+  
       
     default: 
       return {...state }

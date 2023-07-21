@@ -39,7 +39,7 @@ const Cards = ({copyCountries}) => {
       <div className={style.cards}>
       {
         currentCountries?.map( (pais) => (
-          <Card country = {pais} key = {pais.id}/>
+          <Card country = {pais} key ={pais.id}/>
         ))
       }
       </div>

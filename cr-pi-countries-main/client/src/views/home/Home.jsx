@@ -113,7 +113,9 @@ function Home () {
             <option value="All" >Activity</option>
             {
               actitivies?.map((ele) => (
-                <option value={ele.name} key={ele.id}>{ele.name}</option>
+                <option key={ele.id}>
+                  {ele.name}
+                </option>
               ))
             }
           </select>

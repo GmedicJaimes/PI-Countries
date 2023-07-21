@@ -1,3 +1,187 @@
-.h1{
+.containerPrincipal{
+  background-color: #001427;
+
+  height: 767px;
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: center;
+}
+
+.button{
+  position: absolute;
+  right: 30px;
+  margin-top: 10px;
+  
+}
+
+.containerForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 550px;
+  height: 560px;
+
+  margin-top: 60px;
+  margin-right: 20px;
+  padding: 20px;
+
+
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.596);
+}
+
+.containerForm .title{
   color: black;
+  background-color: transparent;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.select{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 4px;
+  color: black;
+  background-color: transparent;
+
+}
+
+.select label{
+  background-color: transparent;
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+.select input{
+  border: none;
+  width: 490px;
+  padding: 3px ;
+  border-radius: 4px;
+  color: black;
+}
+
+.select select {
+  border: none;
+  width: 500px;
+  padding: 3px ;
+  border-radius: 4px;
+  color: black;
+
+  outline: none;
+}
+
+.select span{
+  background-color: transparent;
+  color: red;
+  font-size: 1em;
+}
+
+.select .selectPaises{
+  width: 500px;
+  padding: 3px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+
+.containerImg{
+  width: 337px;
+  height: 599px;
+
+  margin-top: 60px;
+  margin-right: 30px;
+  margin-left: 20px;
+
+  background-image: url('../../assets/form1.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  border-radius: 10px;
+  box-shadow: 0px 5px 16px 0px rgba(255, 255, 255, 0.5);
+}
+
+.paises{
+  width: 460px;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+.paises ul, li{
+  list-style: none;
+  background-color: transparent;
+}
+
+
+.paises div{
+  display: inline;
+  
+  background-color: #8d0801;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+
+  padding: 5px 10px ;
+  margin-left: 10px;
+
+  border: none;
+  border-radius: 5px;
+}
+
+.close{
+  margin-left: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonReset{
+
+  border: none;
+  padding: 5px 20px;
+  border-radius: 10px;
+  margin-top: 5px;
+
+  background-color: #8d0801;
+  color: white;
+
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buttonReset:hover{
+  background-color: #bf0603;
+  cursor: pointer;
+}
+
+.button{
+  position: absolute;
+  top: 10px;
+  right: 40px;
+
+  border: none;
+  padding: 5px 20px;
+  border-radius: 10px;
+
+  background-color: #8d0801;
+  color: white;
+
+  font-size: 1em;
+  font-weight: bold;
+
+}
+
+.button:hover{
+  background-color: #bf0603;
+  cursor: pointer;
 }

@@ -62,6 +62,7 @@ const Create = ({allCountries}) => {
     event.preventDefault()
 
     console.log(dispatch(postActivity(input)))
+    alert('Actividad Creada')
     setInput({
       name: '',
       dificulty: '',
@@ -82,72 +83,73 @@ const Create = ({allCountries}) => {
   const duration = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
   
   return (
-    <div>
-      <Link to="/home">
-        <button className={style.h1}>Exit</button>
-      </Link>
-      <h1 className={style.h1}>Estas en la create</h1>
-      <form name='formulario' onSubmit={handleSubmit}>
-        {/* Nombre */}
-        <div>
-          <label htmlFor="" className={style.h1}>Nombre: </label>
+    <div className={style.containerPrincipal}>
 
-          <input type="text" name='name' value={input.value} onChange={handleChange} className={style.h1}/>
+      <div className={style.containerImg}></div>
+      
+      <form name='formulario' onSubmit={handleSubmit} className={style.containerForm}>
+        {/* Nombre */}
+        <h1 className={style.title}>Crea tu Actividad en tu pais Favorito</h1>
+        
+        <div className={style.select}>
+          <label htmlFor="" >Nombre: </label>
+
+          <input type="text" name='name' value={input.value} onChange={handleChange} />
           {
-          errors.name && <span className={style.h1}>{errors.name}</span>
+          errors.name && <span >{errors.name}</span>
           } 
         </div>
 
         {/* Dificultad */}
-        <div>
-          <label htmlFor="" className={style.h1}>Dificultad: </label>
+        <div className={style.select}>
+          <label htmlFor="" >Dificultad: </label>
             
-          <select name="dificulty" onChange={handleChange} required className={style.h1}>
+          <select name="dificulty" onChange={handleChange} required >
             <option value="" hidden >Select Dificulty</option>
             {dificulty.map(event => (
                 <option value={event}  key={event} >{event}</option>
             ))}
           </select>
           {
-          errors.dificulty && <span className={style.h1}>{errors.dificulty}</span>
+          errors.dificulty && <span >{errors.dificulty}</span>
           }
         </div>
         
         {/* Duracion */}
-        <div>
-          <label htmlFor="" className={style.h1}>Duración: </label>
+        <div className={style.select}>
+          <label htmlFor="" >Duración: </label>
 
-          <select name="duration" onChange={handleChange} required className={style.h1}>
+          <select name="duration" onChange={handleChange} required >
             <option value="" hidden >Select Duration</option>
             {duration.map(event => (
                 <option value={event}  key={event} >{event}</option>
             ))}
           </select>
           {
-          errors.duration && <span className={style.h1}>{errors.duration}</span>
+          errors.duration && <span >{errors.duration}</span>
           }
         </div>
         
         {/* Temporada */}
-        <div>
-          <label htmlFor="" className={style.h1}>Temporada: </label>
+        <div className={style.select}>
+          <label htmlFor="" >Temporada: </label>
           
-          <select name="season" onChange={handleChange} required className={style.h1}>
+          <select name="season" onChange={handleChange} required >
             <option value="" hidden >Select Season</option>
             {season.map(event => (
                 <option value={event}  key={event} >{event}</option>
             ))}
           </select>
           {
-          errors.season && <span className={style.h1}>{errors.season}</span>
+          errors.season && <span>{errors.season}</span>
           }  
         </div>
         
         {/* Paises */}
-        <div>
-          <label htmlFor=""className={style.h1}>Seleccionar Paises: </label>
-          <select type="text" id='countries' name='countries' onChange={handleChange} className={style.h1} value={input.value} >
-            <option value="" className={style.h1}>Select Country</option>
+        <div className={style.select}>
+          <label htmlFor="" >Seleccionar Paises: </label>
+          <select type="text" id='countries' name='countries' onChange={handleChange}  value={input.value} className={style.selectPaises}>
+            <option value="" >Select Country</option>
               {
                 //* mapeo de los paises , para mostrar todas las opciones en el select
                 countries?.map((pais) => (
@@ -158,18 +160,17 @@ const Create = ({allCountries}) => {
               }
           </select>
           {
-            errors.countries && <span className={style.h1}>{errors.countries}</span>
+            errors.countries && <span >{errors.countries}</span>
           }
         </div>
-        <div>
+        <div className={style.paises}>
           <ul>
-            <li className={style.h1}>
-              {/* {console.log(input.countries)} */}
+            <li >
               {
               input.countries.map(country =>
                 <div key={country}>
                   {country}
-                  <button onClick={() => handleDelete(country)} type="button">X</button>
+                  <button onClick={() => handleDelete(country)} type="button" className={style.close}>X</button>
                 </div>)
               }
             </li>
@@ -177,10 +178,16 @@ const Create = ({allCountries}) => {
         </div>
 
         
-        <button type='submit' className={style.h1}>Crear Actividad</button>
-        <input type="reset" />
+        
+        {
+          errors.name ? null : <button type='submit' className={style.buttonReset}>Crear Actividad</button>
+        }
+        <input type="reset" className={style.buttonReset}/>
         
       </form>
+      <Link to="/home">
+        <button className={style.button}>Exit</button>
+      </Link>
 
     </div>
   )

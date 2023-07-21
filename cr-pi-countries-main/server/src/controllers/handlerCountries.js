@@ -16,7 +16,14 @@ const searchHandler = async (req, res) => {
             //*comparacion de texto insensible a mayusculas y minusculas.
             [Op.iLike]: `%${name}%`
           }
-        }
+        },
+        include: [
+          {
+            model: Activity,
+            through: { attributes: []},
+            attributes: ['name', 'dificulty', 'duration', 'season'],
+          }
+        ]
       })
       //* control de error por si el pais no existe.
       if(countryFind.length === 0) {
@@ -48,7 +55,7 @@ const idByHandler = async (req, res) => {
           {
             model: Activity,
             through: { attributes: []},
-            // attributes: ['name', 'dificulty', 'duration', 'season'],
+            attributes: ['name', 'dificulty', 'duration', 'season'],
              
           }
         ],
