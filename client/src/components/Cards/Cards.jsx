@@ -4,14 +4,15 @@ import { useState } from "react";
 
 import style from "./Cards.module.css"
 
-const Cards = ({copyCountries}) => {
+const Cards = ({copyCountries, currentPage, setCurrentPage}) => {
 
   const countriesList = copyCountries;
+  
 
   //! Paginado
   //* estado local paginado
   const [countryPerPage, setCountryPerPage] = useState(10);
-  const [currentPage, setCurrentPage] = useState(1);
+  
 
   const lastCountry = currentPage * countryPerPage;
   const firstCountry = lastCountry - countryPerPage;

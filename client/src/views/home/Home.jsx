@@ -15,8 +15,12 @@ function Home () {
   const copyCountries = useSelector((state) => state.copyCountries);
   const actitivies = useSelector((state) => state.allActivities);
 
+  
   //* estado local busqueda
   const [searchString, setSearchString] = useState('');
+
+  //? estado paginado
+  const [currentPage, setCurrentPage] = useState(1);
 
   //? funcion para guardar el valor de la busqueda y actualizarlo con setSearchString
   function handleChange(event) {
@@ -47,6 +51,7 @@ function Home () {
     const value = event.target.value
 
     dispatch(filterContinent(value))
+    setCurrentPage(1)
   }
 
   function handlerOrder(event) {
@@ -54,6 +59,7 @@ function Home () {
     const value = event.target.value
 
     dispatch(filterOrder(value))
+    setCurrentPage(1)
   }
 
   function handlerPopulation(event) {
@@ -61,6 +67,7 @@ function Home () {
     const value = event.target.value
 
     dispatch(filterPopulation(value))
+    setCurrentPage(1)
   }
   
   function handlerActivity(event) {
@@ -68,13 +75,18 @@ function Home () {
     const value = event.target.value
 
     dispatch(filterActivity(value))
+    setCurrentPage(1)
   }
 
   function handlerReset (event) {
     event.preventDefault()
 
     dispatch(getCountries())
+    setCurrentPage(1)
   }
+
+
+  
 
   return (
     <div>
@@ -121,7 +133,7 @@ function Home () {
           </select>
         </div>
       </div>
-      <Cards copyCountries= {copyCountries} />
+      <Cards copyCountries= {copyCountries} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
             
     </div>
   )

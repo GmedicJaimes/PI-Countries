@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect, } from 'react';
+// import axios from 'axios';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { getById } from '../../redux/actions';
@@ -30,7 +30,7 @@ const Detail = () => {
       <div className={style.country}>
         <h1 >{detail.name}</h1>
         <img src={detail.image} className={style.img} /><br />
-        <h3 >ID:  "{detail.id}"</h3>
+        <h3 >ID:  {detail.id}</h3>
         <h3 >Continent: {detail.continent}</h3>
         <h3 >Capital:  {detail.capital}</h3>
         <h3 >Subregion: {detail.subregion}</h3>
